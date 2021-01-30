@@ -11,8 +11,8 @@ module.exports = class InfoCommand extends BaseCommand {
 
     const infoembed = new Discord.MessageEmbed()
       .addField(`**Servers**:`, ` ${serverIn}`)
-      .addField("Made By", `Xnvyy#8872`)
-      .addField(`Status:`,`Updating!`)
+      .addField("Made By", `Fxy#0001`)
+      .addField(`Status:`,`Updated!`)
       .setColor("#034efc");
       try {
         message.channel.send(infoembed);
