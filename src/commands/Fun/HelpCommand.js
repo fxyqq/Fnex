@@ -10,7 +10,7 @@ module.exports = class HelpCommand extends BaseCommand {
     const helpembed = new Discord.MessageEmbed()
       .setTitle(`Help Tab`)
       .addField(`Fun Commands`, `F!Howgay`, true)
-      .addField(`Fun Commands`,`F!Info`, true)
+      .addField(`Fun Commands`,`F!Botinfo`, true)
       .addField(`Fun Commands`,`F!Say`, true)
       .addField(`Fun Commands`,`F!Whois`, true)
       .addField(`Fun Commands`,`F!Help`, true)
@@ -26,6 +26,7 @@ module.exports = class HelpCommand extends BaseCommand {
       .addField(`Modration`,`F!Kick`, true)
       .addField(`Modration`,`F!Purge`, true)
       .addField(`Modration`,`F!Unban`, true)
+      .setFooter(`Fnex bot | Help | Need Support? Join Our Discord Server | https://discord.gg/pnZVuWKcfv`)
       .setColor(`#00ffae`)
       .setTimestamp()
       
