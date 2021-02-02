@@ -20,6 +20,7 @@ module.exports = class BotinfoCommand extends BaseCommand {
 				`**❯ Channels:** ${client.channels.cache.size.toLocaleString()}`,
 				`**❯ Creation Date:** ${utc(client.user.createdTimestamp).format('Do MMMM YYYY HH:mm:ss')}`,
 				`**❯ Discord.js:** v${djsversion}`,
+				`**❯ Made By: Xnvyy#8872**` ,
 				'\u200b'
 			])
 			.addField('System', [

@@ -9,23 +9,93 @@ module.exports = class HelpCommand extends BaseCommand {
   async run(client, message, args) {
     const helpembed = new Discord.MessageEmbed()
       .setTitle(`Help Tab`)
-      .addField(`Fun Commands`, `F!Howgay`, true)
-      .addField(`Fun Commands`,`F!Botinfo`, true)
-      .addField(`Fun Commands`,`F!Say`, true)
-      .addField(`Fun Commands`,`F!Whois`, true)
-      .addField(`Fun Commands`,`F!Help`, true)
-      .addField(`Fun Commands`,`F!Getstickbugged`, true)
-      .addField(`Fun Commands`,`F!Myppsize`, true)
-      .addField(`Fun Commands`,`F!Nou`, true)
-      .addField(`Fun Commands`,`F!Popcat`, true)
-      .addField(`Fun Commands`,`F!Say`, true)
-      .addField(`Fun Commands`,`F!Serverinfo`, true)
-      .addField(`Fun Commands`,`F!Anouce`, true)
-      .addField(`Fun Commands`,`F!Avatar`, true)
-      .addField(`Modration`,`F!Ban`, true)
-      .addField(`Modration`,`F!Kick`, true)
-      .addField(`Modration`,`F!Purge`, true)
-      .addField(`Modration`,`F!Unban`, true)
+      .addFields({
+        name: `Fun Commands `,
+        value: `F!Howgay`,
+        inline: true,
+      
+      },
+      {
+        name: `Fun Commands`,
+        value: `F!Botinfo`,
+        inline: true,
+      
+      },
+      {
+        name: `Fun Commands`,
+        value: `F!Say`,
+        inline: true,
+      
+      },
+      {
+        name: `'`,
+        value: `F!Whois`,
+        inline: true,
+      
+      },{
+        name: `'`,
+        value: `F!Help`,
+        inline: true,
+      
+      },{
+        name: `'`,
+        value: `F!Getstickbugged`,
+        inline: true,
+      
+      },
+      {
+        name: `'`,
+        value: `F!Myppsize`,
+        inline: true,
+      
+      },{
+        name: `'`,
+        value: `F!Nou`,
+        inline: true,
+      
+      }
+      ,{
+        name: `'`,
+        value: `F!Popcat`,
+        inline: true,
+      
+      },{
+        name: `'`,
+        value: `F!Say`,
+        inline: true,
+      
+      },{
+        name: `'`,
+        value: `F!Anouce`,
+        inline: true,
+      
+      },
+      {
+        name: `'`,
+        value: `F!Avatar`,
+        inline: true,
+      
+      },{
+        name: `Modration`,
+        value: `F!Ban`,
+        inline: true,
+      
+      },{
+        name: `Modration`,
+        value: `F!Kick`,
+        inline: true,
+      
+      },{
+        name: `Modration`,
+        value: `F!Purge`,
+        inline: true,
+      
+      },{
+        name: `'`,
+        value: `F!Unban`,
+        inline: true,
+      
+      })
       .setFooter(`Fnex bot | Help | Need Support? Join Our Discord Server | https://discord.gg/pnZVuWKcfv`)
       .setColor(`#00ffae`)
       .setTimestamp()
