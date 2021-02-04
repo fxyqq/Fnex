@@ -48,7 +48,8 @@ module.exports = class HelpCommand extends BaseCommand {
         value: `F!Myppsize`,
         inline: true,
       
-      },{
+      },
+      {
         name: `'`,
         value: `F!Nou`,
         inline: true,
@@ -86,13 +87,25 @@ module.exports = class HelpCommand extends BaseCommand {
         value: `F!Ban`,
         inline: true,
       
+      },
+      {
+        name: `'`,
+        value: `F!Warn`,
+        inline: true,
+      
+      },
+      {
+        name: `'`,
+        value: `F!Mute`,
+        inline: true,
+      
       },{
         name: `Modration`,
         value: `F!Kick`,
         inline: true,
       
       },{
-        name: `Modration`,
+        name: `'`,
         value: `F!Purge`,
         inline: true,
       
