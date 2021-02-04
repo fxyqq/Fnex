@@ -75,6 +75,12 @@ module.exports = class HelpCommand extends BaseCommand {
         value: `F!Avatar`,
         inline: true,
       
+      },
+      {
+        name: `'`,
+        value: `F!Nickname`,
+        inline: true,
+      
       },{
         name: `Modration`,
         value: `F!Ban`,
