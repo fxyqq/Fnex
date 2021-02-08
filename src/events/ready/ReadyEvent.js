@@ -6,7 +6,7 @@ module.exports = class ReadyEvent extends BaseEvent {
   }
   async run(client) {
     console.log(client.user.tag + ' has logged in Ready.');
-    client.user.setActivity('Prefix : F!  |  Web Page Coming Soon', { status: "dnd" })
+    client.user.setActivity('Prefix : F! | F!Help |  Web Page Coming Soon', { status: "dnd" })
       .catch(console.error);
 
   }

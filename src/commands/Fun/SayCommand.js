@@ -7,16 +7,42 @@ module.exports = class SayCommand extends BaseCommand {
   }
 
   async run(client, message, args) {
+    const permisionembed = new Discord.MessageEmbed()
+    .setTitle("Something Went Wrong")
+    .setDescription('You Dont Have **Permission** To Do that')
+    .setImage(`https://media.giphy.com/media/Wrh8aL75aj4uZwuqta/giphy.gif`)
+    .setColor("RED")
+   const embedwrong = new Discord.MessageEmbed()
+    .setTitle("Something Went Wrong")
+    .setDescription('I Dont Have **Permission** To Do that')
+    .setColor("RED")
+    const embedd = new Discord.MessageEmbed()
+    .setTitle("Something Went Wrong")
+    .setDescription('You Need To **State** a User To Kick.')
+    .setColor("RED")
+    const Notin = new Discord.MessageEmbed()
+    .setTitle("Something Went Wrong")
+    .setDescription('The User Stated Is **Not** In The Server.')
+    .setColor("RED")
+    const nonick = new Discord.MessageEmbed()
+    .setTitle("Something Went Wrong")
+    .setDescription('You Need To **State** A Nickname.')
+    .setColor("RED")
+    const went = new Discord.MessageEmbed()
+    .setTitle("Something Went Wrong")
+    .setDescription('Something Went Wrong')
+    .setColor("RED")
     const messagetosay = args.join(" ");
     const sayembed = new discord.MessageEmbed()
       .setDescription(` ${messagetosay}`)
-      .setFooter("Fnex Bot");
+      .setTimestamp()
+      .setFooter("Fnex Bot | Say Command");
     try {
       await message.channel.send(sayembed);
       message.delete();
     } catch (err){
       console.log(err);
-      message.channel.send("Something Went Wrong.");
+      message.channel.send(went);
     }
   }
 }

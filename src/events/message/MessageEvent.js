@@ -7,9 +7,9 @@ module.exports = class MessageEvent extends BaseEvent {
   
   async run(client, message) {
     if (message.author.bot) return;
-    if (message.content.startsWith(client.prefix)) {
+    if (message.content.startsWith(client.prefix || client.prefix1)) {
       const [cmdName, ...cmdArgs] = message.content
-      .slice(client.prefix.length)
+      .slice(client.prefix.length || client.prefix1.length)
       .trim()
       .split(/\s+/);
       const command = client.commands.get(cmdName);

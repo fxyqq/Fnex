@@ -9,10 +9,9 @@ module.exports = class AvatarCommand extends BaseCommand {
 
   async run(client, message, args) {
     let mentioneduser = message.mentions.users.first();
-    const avatarembed = new Discord.MessageEmbed()
-     .setImage(mentioneduser.displayAvatarURL())
+   
      try {
-       message.channel.send(avatarembed);
+       message.channel.send(mentioneduser.displayAvatarURL());
      } catch (err) {
        console.log(err);
      }

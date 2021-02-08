@@ -9,6 +9,7 @@ const client = new Client();
   client.commands = new Map();
   client.events = new Map();
   client.prefix = config.prefix;
+  client.prefix1 = config.prefix1;
   await registerCommands(client, '../commands');
   await registerEvents(client, '../events');
   await client.login(config.token);

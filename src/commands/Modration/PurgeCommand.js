@@ -30,7 +30,7 @@ module.exports = class PurgeCommand extends BaseCommand {
       .setColor("RED")
     const Deletedsize = new Discord.MessageEmbed()
       .setTitle(`Success`)
-      .setDescription(`Deleted ${messages.size} Messages.`)
+      .setDescription(`.`)
       .setColor("GREEN")
       .setTimestamp();
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(permisionembed);

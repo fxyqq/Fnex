@@ -1,5 +1,7 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
-const Discord = require("discord.js");
+const Discord = require('discord.js');
+const pagination = require('discord.js-pagination');
+
 
 module.exports = class HelpCommand extends BaseCommand {
   constructor() {
@@ -7,118 +9,45 @@ module.exports = class HelpCommand extends BaseCommand {
   }
 
   async run(client, message, args) {
-    const helpembed = new Discord.MessageEmbed()
-      .setTitle(`Help Tab`)
-      .addFields({
-        name: `Fun Commands `,
-        value: `F!Howgay`,
-        inline: true,
-      
-      },
-      {
-        name: `Fun Commands`,
-        value: `F!Botinfo`,
-        inline: true,
-      
-      },
-      {
-        name: `Fun Commands`,
-        value: `F!Say`,
-        inline: true,
-      
-      },
-      {
-        name: `'`,
-        value: `F!Whois`,
-        inline: true,
-      
-      },{
-        name: `'`,
-        value: `F!Help`,
-        inline: true,
-      
-      },{
-        name: `'`,
-        value: `F!Getstickbugged`,
-        inline: true,
-      
-      },
-      {
-        name: `'`,
-        value: `F!Myppsize`,
-        inline: true,
-      
-      },
-      {
-        name: `'`,
-        value: `F!Nou`,
-        inline: true,
-      
-      }
-      ,{
-        name: `'`,
-        value: `F!Popcat`,
-        inline: true,
-      
-      },{
-        name: `'`,
-        value: `F!Say`,
-        inline: true,
-      
-      },{
-        name: `'`,
-        value: `F!Anouce`,
-        inline: true,
-      
-      },
-      {
-        name: `'`,
-        value: `F!Avatar`,
-        inline: true,
-      
-      },
-      {
-        name: `'`,
-        value: `F!Nickname`,
-        inline: true,
-      
-      },{
-        name: `Modration`,
-        value: `F!Ban`,
-        inline: true,
-      
-      },
-      {
-        name: `'`,
-        value: `F!Warn`,
-        inline: true,
-      
-      },
-      {
-        name: `'`,
-        value: `F!Mute`,
-        inline: true,
-      
-      },{
-        name: `Modration`,
-        value: `F!Kick`,
-        inline: true,
-      
-      },{
-        name: `'`,
-        value: `F!Purge`,
-        inline: true,
-      
-      },{
-        name: `'`,
-        value: `F!Unban`,
-        inline: true,
-      
-      })
-      .setFooter(`Fnex bot | Help | Need Support? Join Our Discord Server | https://discord.gg/pnZVuWKcfv`)
-      .setColor(`#00ffae`)
+
+    const moderation = new Discord.MessageEmbed()
+      .setTitle('Moderation')
+      .addField('`F!Kick`', 'Kicks a member from your server via mention or ID', true)
+      .addField('`F!Ban`', 'Bans a member from your server via mention or ID', true)
+      .addField('`F!Mute`', 'Mutes a member from your server via mention', true)
+      .addField('`F!Nickname`', 'Adds A Nickname To A Mentioned Member', true)
+      .addField('`F!Unban`', 'UnBans a member from your server via ID', true)
+      .addField('`F!UnMute`', 'UnMutes a member from your server via mention', true)
+      .addField('`F!Warn`', 'Warns Mentioned Member', true)
+      .addField('`F!Purge`', 'Purges messages', true)
       .setTimestamp()
-      
-    await message.channel.send(helpembed);
-  } 
+      .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
+
+    const fun = new Discord.MessageEmbed()
+      .setTitle('Fun')
+      .addField('`F!Anouce`', 'Anouce A Message' , true)
+      .addField('`F!Avatar`', 'Shows Mentioned User Avatar')
+      .addField('`F!BotInfo`', 'Shows Bot Info')
+      .addField('`F!GetStickBugged`', 'Meme')
+      .addField('`F!Help`', 'Shows All Of The Commands')
+      .addField('`F!Howgay`', 'Meme', true)
+      .addField('`F!Myppsize`', 'Meme', true)
+      .addField('`F!Ping`', 'Shows Ping', true)
+      .addField('`F!Say`', 'Says The Message', true)
+      .addField('`F!Serverinfo`', 'Shows The Server Info', true)
+      .addField('`F!Whois`', 'Shows User Info', true)
+      .setTimestamp()
+      .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
+
+    const pages = [
+      moderation,
+      fun
+    ]
+
+    const emojiList = ["⏪", "⏩"];
+
+    const timeout = '120000';
+
+    pagination(message, pages, emojiList, timeout)
+  }
 }
