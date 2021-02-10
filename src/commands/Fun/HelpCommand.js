@@ -20,6 +20,7 @@ module.exports = class HelpCommand extends BaseCommand {
       .addField('`F!UnMute`', 'UnMutes a member from your server via mention', true)
       .addField('`F!Warn`', 'Warns Mentioned Member', true)
       .addField('`F!Purge`', 'Purges messages', true)
+      .addField('`F!Poll`', 'Makes A Poll Message', true)
       .setTimestamp()
       .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
 
@@ -28,6 +29,7 @@ module.exports = class HelpCommand extends BaseCommand {
       .addField('`F!Anouce`', 'Anouce A Message' , true)
       .addField('`F!Avatar`', 'Shows Mentioned User Avatar')
       .addField('`F!BotInfo`', 'Shows Bot Info')
+      .addField('`F!Coinflip`', 'flips Coin')
       .addField('`F!GetStickBugged`', 'Meme')
       .addField('`F!Help`', 'Shows All Of The Commands')
       .addField('`F!Howgay`', 'Meme', true)
@@ -39,9 +41,24 @@ module.exports = class HelpCommand extends BaseCommand {
       .setTimestamp()
       .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
 
+      const ticket = new Discord.MessageEmbed()
+      .setTitle('Ticket')
+      .addField('`F!Ticket`', 'To Open A Ticket' , true)
+      .addField('`F!Close`', 'To Close A Ticket', true)
+      .setTimestamp()
+      .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
+
+      const verify = new Discord.MessageEmbed()
+      .setTitle('Verify')
+      .addField('`F!Verify`', 'To Verify')
+      .setTimestamp()
+      .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
+
     const pages = [
       moderation,
-      fun
+      fun,
+      ticket,
+      verify
     ]
 
     const emojiList = ["⏪", "⏩"];
