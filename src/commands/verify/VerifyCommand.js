@@ -6,13 +6,12 @@ module.exports = class VerifyCommand extends BaseCommand {
     super('Verify', 'verify', []);
   }
 
-  run(client, message, args) {
-    message.delete()
+  async run(client, message, args) {
     fetch("https://api.no-api-key.com/api/v2/captcha")
       .then(res => res.json())
       .then(json => {
         
-        let role = message.guild.roles.cache.find(rl => rl.name === "Verified","verified")
+        var role = message.guild.roles.cache.find(r => r.name === 'Verified' || "verified" || "Member" || "member");
         if(!role) return message.author.send("Could not find a role called user!")
         
 
@@ -30,7 +29,7 @@ module.exports = class VerifyCommand extends BaseCommand {
 
         const correct = new Discord.MessageEmbed()
         .setTitle("Correct!")
-        .setDescription(`You Have Now Been Verified In ${message.guild.name}.`)
+        .setDescription(`**You Have Now Been Verified In** ${message.guild.name}.`)
         .setColor("GREEN")
         .setFooter(`Fnex Bot | Verify`)
 
@@ -44,7 +43,7 @@ module.exports = class VerifyCommand extends BaseCommand {
 
         message.author.send(ques)
           .then(() => {
-            message.author.dmChannel.awaitMessages(filter, { max: 1, time: 60000, errors: ["time"] })
+            message.author.dmChannel.awaitMessages(filter, { max: 1, time: 80000, errors: ["time"] })
               .then(collected => {
                 if (![json.captcha_text].includes(collected.first().content)) {
                   return message.author.send(wrong)

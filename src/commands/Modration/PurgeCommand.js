@@ -18,7 +18,7 @@ module.exports = class PurgeCommand extends BaseCommand {
       .setColor("RED")
     const embedd = new Discord.MessageEmbed()
       .setTitle("Something Went Wrong")
-      .setDescription("The Number Stated Must be 2-300.")
+      .setDescription("The Number Stated Must be 2-5x 00.")
       .setColor("RED")
     const Notin = new Discord.MessageEmbed()
       .setTitle("Something Went Wrong")
@@ -36,11 +36,14 @@ module.exports = class PurgeCommand extends BaseCommand {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(permisionembed);
     if (!message.guild.me.hasPermission("MANAGE_MESSAGES")) return message.channel.send(embedwrong);
     if (!args[0]) return message.channel.send(nonick);
+
+
     const ammount = Number(args[0], 10);
+
 
     if (isNaN(ammount)) return message.channel.send(nonick);
     if (!Number.isInteger(ammount)) return message.channel.send(Notin);
-    if (!ammount || ammount < 2 || ammount > 300) return message.channel.send(embedd);
+    if (!ammount || ammount < 2 || ammount > 500) return message.channel.send(embedd);
     const fetched = await message.channel.messages.fetch({
       Limit: ammount
     });
@@ -52,5 +55,8 @@ module.exports = class PurgeCommand extends BaseCommand {
       console.log(err);
       message.channel.send("Something Went Wrong.");
     }
+    setTimeout(function () {
+      message.delete()
+    }, 5000);
   }
 }

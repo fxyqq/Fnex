@@ -12,6 +12,7 @@ module.exports = class HowgayCommand extends BaseCommand {
 
 
   async run(client, message, args) {
+    const mention = message.channel.mention
     const gayEmbed = new Discord.MessageEmbed()
       .setColor('RANDOM')
       .setTitle('Hiro Gay R8 Machine 🏳️‍🌈')

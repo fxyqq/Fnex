@@ -6,7 +6,7 @@ module.exports = class AnouceCommand extends BaseCommand {
     super('Anouce', 'Fun', []);
   }
 
-  run(client, message, args) {
+ async run(client, message, args) {
     const permisionembed = new Discord.MessageEmbed()
     .setTitle("Something Went Wrong")
     .setDescription('You Dont Have **Permission** To Do that')
@@ -31,16 +31,19 @@ module.exports = class AnouceCommand extends BaseCommand {
     .setDescription('Something Went Wrong')
     .setColor("RED")
     if (!message.member.hasPermission("MANAGE_MESSAGES","ADMINISTRATOR")) return message.channel.send(permisionembed)
-    let argsresult;
-    let Mchannel = message.mentions.channels.first()
+    const messagetosay = args.join(" ");
+    const sayembed = new Discord.MessageEmbed()
+      .setTitle(`ANOUCEMENT`)
+      .setDescription(` ${messagetosay}`)
+      .setTimestamp()
+      .setColor(`PURPLE`)
     message.delete()
-    if (Mchannel) {
-      argsresult = args.slice(1).join(" ");
-      Mchannel.send(argsresult)
-    } else {
-      argsresult = args.join(" ")
-      message.channel.send(argsresult)
-
+    try {
+      await message.channel.send(sayembed)
+      message.delete();
+    } catch (err){
+      console.log(err);
+      message.channel.send(went);
     }
   }
 }

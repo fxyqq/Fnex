@@ -1,5 +1,5 @@
 const BaseCommand = require('../../utils/structures/BaseCommand');
-const discord = require("discord.js");
+const Discord = require("discord.js");
 
 module.exports = class SayCommand extends BaseCommand {
   constructor() {
@@ -33,12 +33,8 @@ module.exports = class SayCommand extends BaseCommand {
     .setDescription('Something Went Wrong')
     .setColor("RED")
     const messagetosay = args.join(" ");
-    const sayembed = new discord.MessageEmbed()
-      .setDescription(` ${messagetosay}`)
-      .setTimestamp()
-      .setFooter("Fnex Bot | Say Command");
     try {
-      await message.channel.send(sayembed);
+      await message.channel.send(messagetosay)
       message.delete();
     } catch (err){
       console.log(err);

@@ -32,6 +32,8 @@ module.exports = class HelpCommand extends BaseCommand {
       .addField('`F!Coinflip`', 'flips Coin')
       .addField('`F!GetStickBugged`', 'Meme')
       .addField('`F!Help`', 'Shows All Of The Commands')
+      .addField('`F!Nou`', 'Meme')
+      .addField('`F!Popcat`', 'Meme')
       .addField('`F!Howgay`', 'Meme', true)
       .addField('`F!Myppsize`', 'Meme', true)
       .addField('`F!Ping`', 'Shows Ping', true)
@@ -54,16 +56,26 @@ module.exports = class HelpCommand extends BaseCommand {
       .setTimestamp()
       .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
 
+      const Economy = new Discord.MessageEmbed()
+      .setTitle('Economy')
+      .addField('`F!Cash`', 'Shows Your Current Cash!')
+      .addField('`F!Daily`', 'Claim Your Daily Cash!')
+      .addField('`F!Work`', 'You Can Work To Gain Cash!')
+      .setTimestamp()
+      .setFooter(`Fnex Bot | Help Command | Need Help? Join Our Discord Server https://discord.gg/pnZVuWKcfv`)
+
+
     const pages = [
       moderation,
       fun,
       ticket,
-      verify
+      verify,
+      Economy,
     ]
 
     const emojiList = ["⏪", "⏩"];
 
-    const timeout = '120000';
+    const timeout = '1200000';
 
     pagination(message, pages, emojiList, timeout)
   }
