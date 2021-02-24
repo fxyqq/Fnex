@@ -13,20 +13,20 @@ module.exports = class BotinfoCommand extends BaseCommand {
 		const embed = new MessageEmbed()
 			.setColor(message.guild.me.displayHexColor || 'RED')
 			.addField('General', [
-				`**❯ Client:** ${client.user.tag} (${client.user.id})`,
-				`**❯ Commands:** ${client.commands.size}`,
-				`**❯ Servers:** ${client.guilds.cache.size.toLocaleString()} `,
-				`**❯ Users:** ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`,
-				`**❯ Channels:** ${client.channels.cache.size.toLocaleString()}`,
-				`**❯ Creation Date:** ${utc(client.user.createdTimestamp).format('Do MMMM YYYY HH:mm:ss')}`,
-				`**❯ Discord.js:** v${djsversion}`,
-				`**❯ Made By: Fxy#0001**` ,
+				`**❯ • Client:** ${client.user.tag} (${client.user.id})`,
+				`**❯ • Commands:** ${client.commands.size}`,
+				`**❯ • __Servers__:** ${client.guilds.cache.size.toLocaleString()} `,
+				`**❯ • Users:** ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()}`,
+				`**❯ • Channels:** ${client.channels.cache.size.toLocaleString()}`,
+				`**❯ • Creation Date:** ${utc(client.user.createdTimestamp).format('Do MMMM YYYY HH:mm:ss')}`,
+				`**❯ • Discord.js:** v${djsversion}`,
+				`**❯ • Made By: Fxy#0001**` ,
 				'\u200b'
 			])
 			.addField('System', [
-				`**❯ Platform:** ${process.platform}`,
-				`**❯ Uptime:** ${ms(os.uptime() * 1000, { long: true })}`,
-				`**❯ CPU:**`,
+				`**❯ • Platform:** ${process.platform}`,
+				`**❯ • Uptime:** ${ms(os.uptime() * 1000, { long: true })}`,
+				`**❯ • CPU:**`,
 				`\u3000 Cores: ${os.cpus().length}`,
 				`\u3000 Model: ${core.model}`,
 				`\u3000 Speed: ${core.speed}MHz`,
